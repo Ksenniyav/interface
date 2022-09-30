@@ -1,6 +1,6 @@
 <template>
   <button class="headerButton">
-    <p>Conneсt wallet</p>
+    <p><slot/></p>
   </button>
 </template>
 
@@ -18,17 +18,13 @@ export default {
   border-radius: 8px;
   font-weight: 500;
   font-size: 20px;
+  border: none;
   line-height: 24px;
   color: #FFFFFF;
   cursor: pointer;
 }
 
 .p {
-  position: absolute;
-  width: 127px;
-  height: 24px;
-  left: 1712px;
-  top: 54px;
   font-size: 20px;
   line-height: 24px;
   font-family: 'Helvetica Neue';
@@ -37,4 +33,3 @@ export default {
   color: #FFFFFF;
   }
 </style>
-Footer

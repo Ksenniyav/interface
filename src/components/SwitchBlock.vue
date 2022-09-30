@@ -4,11 +4,22 @@
             <p @click="switchState = 1" :class="switchState == 1 ? 'switchBlock__swithcer__chosen' : '' ">Open game</p>
             <p @click="switchState = 2" :class="switchState == 2 ? 'switchBlock__swithcer__chosen' : ''">Past game</p>
         </div>
+        <div v-if="switchState === 1" style="height: 400px; overflow-y: scroll">
+        <div v-for="i in 6" :key="i.id">
+        <OpenGameCard />
+        </div>
+        </div>
+        <div v-if="switchState ===2">
+            <PastGameCard />
+        </div>
     </div>
 </template>
 
 <script>
+import OpenGameCard from './OpenGameCard.vue';
+import PastGameCard from './PastGameCard.vue';
 export default {
+  components: { OpenGameCard, PastGameCard },
     data() {
         return {
             switchState: 1,
@@ -24,7 +35,7 @@ export default {
     border-radius: 24px;
     max-width: 864px;
     width: 100%;
-    margin-top: 30px;
+    margin: 0 auto;
     padding: 30px 80px;
 }
 .switchBlock__swithcer {
